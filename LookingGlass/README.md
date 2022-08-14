@@ -1,8 +1,8 @@
 # THM - [LookingGlass](https://www.tryhackme.com/room/lookingglass#)
-## [John Hammond](https://youtu.be/Wqvy1qGOAVA)
-# 13AUG2022
+## [Walkthrough - John Hammond](https://youtu.be/Wqvy1qGOAVA)
+## Date: 13AUG2022
 
-# Target IP
+## Target IP
 ```
 export IP=10.10.6.149
 ```
@@ -17,8 +17,8 @@ nmap -p- -oN nmap/all_ips.nmap $IP
 ./ssh_spam.sh
 
 ## We found the magic port (9595)
-ssh -o HostKeyAlgorithms=+ssh-rsa -o StrictHostKeyChecking=no $IP -p 9595
-
+`ssh -o HostKeyAlgorithms=+ssh-rsa -o StrictHostKeyChecking=no $IP -p 9595`
+```
 Warning: Permanently added '[10.10.6.149]:9595' (RSA) to the list of known hosts.
 
 You've found the real service.
@@ -60,14 +60,17 @@ Wph gjgl aoh zkuqsi zg ale hpie;
 Bpe oqbzc nxyi tst iosszqdtz,
 Eew ale xdte semja dbxxkhfe.
 Jdbr tivtmi pw sxderpIoeKeudmgdstd
+```
 
 ## Vigenere Cipher
 ## https://www.dcode.fr/vigenere-cipher
 
-Jabberwock #This is the key
-thealphabetcipher #This is the second key
+*Jabberwock* #This is the key
 
-#Decrypted output
+*thealphabetcipher* #This is the second key
+
+##Decrypted output
+```
 'Twas brillig, and the slithy toves
 Did gyre and gimble in the wabe;
 All mimsy were the borogoves,
@@ -102,6 +105,7 @@ He chortled in his joy.
 Did gyre and gimble in the wabe;
 All mimsy were the borogoves,
 And the mome raths outgrabe.
+```
 *Your secret is bewareTheJabberwock*
 
 ## Enter the secret in our ssh command
@@ -146,12 +150,12 @@ jabberwock@looking-glass:~$ cat /etc/sudoers.d/alice
 alice ssalg-gnikool = (root) NOPASSWD: /bin/bash
 
 ```
-# World executable ':/
+#i# World executable ':/
 ```
 ll /home/
 drwx--x--x  6 alice        alice        4096 Jul  3  2020 alice/```
 ```
-# We have a public key
+## We have a public key
 ```
 jabberwock@looking-glass:/home/alice$ cat .ssh/id_rsa.pub
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDGY+dwBeKw2NtTbGLN+3hpg+qZ9ebXvfkU+UZ/iP0TFmGWaYM0hFyE9oVSoldBmLmvJAfpjFk/kgglcQ0r5rhahEPI+jIYr/retdOf8hZYpCRr21DbGt2fLF3Bu2Io/Uvhur/i9Tc5RwD5pgfGqHKrf1qul5x4dWK36NU+uIeIIDveTuAcKCmTBZzM1rkwwaj7UKDiJ/N9+/i6E+TEEsuXd/isF/zhGa4oQTLpthn79Y4SAeV+SzmeAWeJbvHZHe/KrvHIOvCJcSN9bjJh76QuIZnLKTWJrscaE0qkhG5890l1P6s0auNgUuOHN5ZgGYfHsmSGQRQUhXHplXXL6CKF alice@looking-glass
