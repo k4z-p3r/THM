@@ -1,2 +1,2 @@
 # THM
-TryHackMe.com
+[THC](TryHackMe.com)

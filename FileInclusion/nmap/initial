@@ -1,0 +1,29 @@
+# Nmap 7.92 scan initiated Mon Jul 18 21:24:56 2022 as: nmap -sC -sV -oN nmap/initial 10.10.3.84
+Nmap scan report for 10.10.3.84
+Host is up (0.14s latency).
+Not shown: 986 closed tcp ports (conn-refused)
+PORT      STATE    SERVICE     VERSION
+22/tcp    open     ssh         OpenSSH 7.6p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 56:80:33:63:f2:54:aa:db:19:cf:47:d4:7a:f4:59:f5 (RSA)
+|   256 1b:1c:1e:03:61:7d:1a:60:5d:cc:5b:46:06:f4:2e:3e (ECDSA)
+|_  256 d1:42:a5:95:fc:70:93:4f:7a:ba:43:b2:f9:2d:79:e8 (ED25519)
+80/tcp    open     http        nginx 1.14.0 (Ubuntu)
+|_http-server-header: nginx/1.14.0 (Ubuntu)
+|_http-title: File Inclusion Lab!
+458/tcp   filtered appleqtc
+2170/tcp  filtered eyetv
+3828/tcp  filtered neteh
+4003/tcp  filtered pxc-splr-ft
+4445/tcp  filtered upnotifyp
+6669/tcp  filtered irc
+9002/tcp  filtered dynamid
+9207/tcp  filtered wap-vcal-s
+19842/tcp filtered unknown
+27000/tcp filtered flexlm0
+32769/tcp filtered filenet-rpc
+50389/tcp filtered unknown
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Jul 18 21:25:25 2022 -- 1 IP address (1 host up) scanned in 28.08 seconds
